@@ -24,6 +24,11 @@ end
 
 gem 'jquery-rails'
 
+group :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers', require: false
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
