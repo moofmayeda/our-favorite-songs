@@ -1,5 +1,5 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-describe 'User' do
+describe User do
   it { should have_and_belong_to_many(:songs) }
 end
