@@ -18,4 +18,5 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :songs, through: :favorites
   has_many :artists, through: :songs
+  validates :username, presence: true
 end
