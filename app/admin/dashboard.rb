@@ -24,8 +24,11 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
+        panel "Your favorite songs" do
+          table_for current_user.songs do |t|
+            t.column :name
+            t.column :artist
+          end
         end
       end
     end
