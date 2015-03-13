@@ -5,6 +5,7 @@ ActiveAdmin.register_page "Stats" do
 		  	panel "Top Songs" do
 		  		table_for Song.joins(:favorites).select('songs.*, COUNT(song_id) AS "song_count"').group("songs.id").order("song_count DESC") do
 		  			column :name
+		  			column(:artist_id) { |song| song.artist.name }
 		  		end
 		  	end
 		  end
