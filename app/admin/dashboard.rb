@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Favorites" do
           ul do
             Favorite.recent.map do |favorite|
-              li link_to(favorite.user.username, admin_user_path(favorite.user)) + " favorited " + link_to(favorite.song.name, admin_song_path(favorite.song)) + " by " + link_to(favorite.song.artist.name, admin_artist_path(favorite.song.artist))
+              li link_to(favorite.user.username, admin_user_path(favorite.user)) + " favorited " + link_to(favorite.song.name, admin_artist_song_path(favorite.song.artist, favorite.song)) + " by " + link_to(favorite.song.artist.name, admin_artist_path(favorite.song.artist))
             end
           end
         end
