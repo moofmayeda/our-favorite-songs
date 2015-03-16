@@ -8,6 +8,7 @@ gem 'rails', '3.2.0'
 gem 'activerecord-postgresql-adapter'
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
+gem "paperclip", "~> 4.2"
 
 
 # Gems used only for assets and not required
