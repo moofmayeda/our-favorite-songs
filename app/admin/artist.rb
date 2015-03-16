@@ -19,7 +19,12 @@ ActiveAdmin.register Artist do
     panel "Songs" do
       table_for artist.songs do
         column :name
+        column("Favorites") {|song| song.favorites.count }
       end
     end
   end
+
+  action_item only: :show do
+		link_to("New Song", new_admin_artist_song_path(artist))
+	end
 end
