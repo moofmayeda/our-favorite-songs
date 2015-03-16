@@ -14,4 +14,12 @@ ActiveAdmin.register Artist do
 
 		f.actions
 	end
+
+	show do
+    panel "Songs" do
+      table_for artist.songs do
+        column :name
+      end
+    end
+  end
 end
