@@ -14,7 +14,13 @@ Make sure you've installed [postgres](http://www.postgresql.org/download/) and h
 $ postgres
 ```
 
-Install all the dependencies:
+Install [ImageMagick](http://www.imagemagick.org) for photo uploads via [Homebrew](http://brew.sh):
+
+```console
+$ brew install imagemagick
+```
+
+Install gems:
 
 ```console
 $ bundle install
