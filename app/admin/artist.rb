@@ -1,9 +1,10 @@
 ActiveAdmin.register Artist do
-	form do |f|
+	form html: { enctype: "multipart/form-data" } do |f|
 		f.semantic_errors *f.object.errors.keys
 
 		f.inputs "Artist" do
 			f.input :name
+			f.input :artist_pic, as: :file, hint: f.template.image_tag(f.object.artist_pic.url(:thumb))
 		end
 
 		f.inputs "Song" do
