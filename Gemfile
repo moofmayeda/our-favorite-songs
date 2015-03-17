@@ -9,8 +9,9 @@ gem 'activerecord-postgresql-adapter'
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
 gem "paperclip", "~> 4.2"
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-
+gem 'dotenv-rails', :groups => [:development, :test]
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

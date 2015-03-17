@@ -5,6 +5,7 @@ Favsongs::Application.routes.draw do
   devise_for :users, ActiveAdmin::Devise.config
 
   resources :songs
+  resources :charges
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
