@@ -25,6 +25,9 @@ ActiveAdmin.register Artist do
 	end
 
 	show do
+		if artist.artist_pic.exists?
+			div image_tag(artist.artist_pic.url(:medium), height: '300')
+		end
     panel "Songs" do
       table_for artist.songs do
         column :name
