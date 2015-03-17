@@ -1,4 +1,12 @@
 ActiveAdmin.register Artist do
+	index do
+		column :name
+		column "Image" do |artist|
+			link_to(image_tag(artist.artist_pic.url(:thumb), height: '100'), admin_artist_path(artist))
+		end
+		default_actions
+	end
+
 	form html: { enctype: "multipart/form-data" } do |f|
 		f.semantic_errors *f.object.errors.keys
 
