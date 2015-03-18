@@ -15,7 +15,8 @@ function stripeResponseHandler(status, response) {
 	var $form = $('#new_charge');
 
 	if (response.error) {
-		console.log(response.error.message);
+		$form.find('#payment-errors').text(response.error.message);
+    $form.find('input[type=submit]').prop('disabled', false);
 	} else {
 		var token = response.id;
 		$form.append($('<input type="hidden" name="stripeToken" />').val(token));

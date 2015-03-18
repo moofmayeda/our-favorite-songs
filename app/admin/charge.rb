@@ -20,6 +20,6 @@ ActiveAdmin.register Charge do
 			script src: javascript_path('customstripe.js'), type: "text/javascript"
 		end
 
-		f.form_buffers.last << "<span id='STRIPE_KEY' style='display:none'>".html_safe + ENV['STRIPE_PUBLISHABLE_KEY']
+		f.form_buffers.last << "<span id='payment-errors'></span><span id='STRIPE_KEY' style='display:none'>".html_safe + ENV['STRIPE_PUBLISHABLE_KEY']
 	end
 end
