@@ -22,4 +22,19 @@ ActiveAdmin.register Charge do
 
 		f.form_buffers.last << "<span id='payment-errors'></span><span id='STRIPE_KEY' style='display:none'>".html_safe + ENV['STRIPE_PUBLISHABLE_KEY']
 	end
+
+	before_create do |charge|
+		Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+
+		token = params[:stripeToken]
+
+		begin
+			stripeCharge = Stripe::Charge.create(
+				amount: charge.amount,
+				currency: "usd",
+				source: token
+			)
+		rescue Stripe::CardError => e
+		end
+	end
 end
