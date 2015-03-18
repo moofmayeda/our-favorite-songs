@@ -6,6 +6,12 @@ class Charge < ActiveRecord::Base
 	def credit_card
 	end
 
-	def credit_card=(arg)
+	def cvc
+	end
+
+	def exp_month
+	end
+
+	def exp_year
 	end
 end

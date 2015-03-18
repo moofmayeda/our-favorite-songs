@@ -6,7 +6,12 @@ ActiveAdmin.register Charge do
 		f.inputs "Payment info" do
 			f.input :user
 			f.input :amount
-			f.input :credit_card, as: :string, input_html: {id: "blah", name: ""}
+			f.input :credit_card, input_html: {name: "", "data-stripe" => "number"}
+			f.input :cvc, input_html: {name: "", "data-stripe" => "cvc"}
+			f.inputs "Expiration (MM/YYYY)" do
+				f.input :exp_month, input_html: {name: "", "data-stripe" => "exp-month"}
+				f.input :exp_year, input_html: {name: "", "data-stripe" => "exp-year"}
+			end
 		end
 		f.actions
 
