@@ -6,6 +6,7 @@ ActiveAdmin.register Charge do
 		f.inputs "Payment info" do
 			f.input :user
 			f.input :amount
+			f.input :credit_card, as: :string, input_html: {id: "blah", name: ""}
 		end
 		f.actions
 
