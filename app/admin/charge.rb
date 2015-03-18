@@ -1,4 +1,6 @@
 ActiveAdmin.register Charge do
+	belongs_to :user, optional: true
+
 	form do |f|
 		f.semantic_errors *f.object.errors.keys
 		f.inputs "Payment info" do
