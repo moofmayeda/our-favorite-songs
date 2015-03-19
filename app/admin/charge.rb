@@ -30,7 +30,7 @@ ActiveAdmin.register Charge do
 
 		begin
 			stripeCharge = Stripe::Charge.create(
-				amount: charge.amount,
+				amount: 100 * charge.amount,
 				currency: "usd",
 				source: token
 			)
