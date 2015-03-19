@@ -23,11 +23,13 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
 
-      column do
-        panel "Your favorite songs" do
-          table_for current_user.songs do |t|
-            t.column :name
-            t.column :artist
+      if current_user
+        column do
+          panel "Your favorite songs" do
+            table_for current_user.songs do |t|
+              t.column :name
+              t.column :artist
+            end
           end
         end
       end
