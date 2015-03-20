@@ -1,6 +1,7 @@
 class Artist < ActiveRecord::Base
 	has_many :songs, inverse_of: :artist
 	has_many :users, through: :songs
+	has_one :person, as: :human
 	validates_uniqueness_of :name
 	accepts_nested_attributes_for :songs
 	attr_accessible :name, :songs_attributes, :artist_pic

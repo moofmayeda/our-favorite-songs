@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   has_many :songs, through: :favorites
   has_many :artists, through: :songs
   has_many :charges
+  has_one :person, as: :human
   validates :username, presence: true
 
   def display_name
