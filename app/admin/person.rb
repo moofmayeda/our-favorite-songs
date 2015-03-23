@@ -11,11 +11,18 @@ ActiveAdmin.register Person do
 	end
 
 	index do
+		column "Name" do |person|
+			if person.human.is_a? User
+				person.human.username
+			else
+				person.human.name
+			end
+		end
+		column :human_type
 		column :id
 		column :pipeline_id do |person|
 			link_to(person.pipeline_id, "https://www.pipelinedeals.com/people/" + person.pipeline_id.to_s, target: "_blank")
 		end
-		column :human_type
 		column :created_at
 		column :updated_at
 		default_actions
