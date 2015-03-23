@@ -35,8 +35,13 @@ protected
 			details = {'full_name' => self.human.name}
 		end
 		begin
-			RestClient.post "https://api.pipelinedeals.com/api/v3/people.json?api_key=#{ENV['PIPELINE_KEY']}",
-			{ 'person' => details }
+			response = RestClient.post "https://api.pipelinedeals.com/api/v3/people.json?api_key=#{ENV['PIPELINE_KEY']}",
+			{ 'person' => details }, :accept => :json
+		case response.code
+		when 200
+			res = JSON.parse(response.body)
+			self.pipeline_id = res["id"]
+		end
 		rescue RestClient::BadRequest => error
 			message = JSON.parse(error.response)['message']
 			errors.add(:human, message)
