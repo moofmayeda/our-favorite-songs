@@ -12,7 +12,9 @@ ActiveAdmin.register Person do
 
 	index do
 		column :id
-		column :pipeline_id
+		column :pipeline_id do |person|
+			link_to(person.pipeline_id, "https://www.pipelinedeals.com/people/" + person.pipeline_id.to_s, target: "_blank")
+		end
 		column :human_type
 		column :created_at
 		column :updated_at
