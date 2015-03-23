@@ -9,4 +9,13 @@ ActiveAdmin.register Person do
 		end
 		f.actions
 	end
+
+	index do
+		column :id
+		column :pipeline_id
+		column :human_type
+		column :created_at
+		column :updated_at
+		default_actions
+	end
 end
