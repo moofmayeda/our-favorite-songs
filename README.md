@@ -1,5 +1,5 @@
 #Our Favorite Songs
-Our Favorite Songs allows users to keep track of their favorite songs and artists. It is my first app using ActiveAdmin and is intended to explore customizing ActiveAdmin.
+Our Favorite Songs allows users to keep track of their favorite songs and artists. It is my first app using ActiveAdmin and is intended to explore customizing ActiveAdmin. The administration portal allows administrators basic CRUD functionality as well as the ability to charge users via the Stripe API and keep track of people via the Pipeline Deals API.
 
 ##Setup
 In your terminal, clone this repo:
