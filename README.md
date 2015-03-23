@@ -33,6 +33,14 @@ $ rake db:create
 $ rake db:migrate
 ```
 
+Add your secret [Stripe](https://dashboard.stripe.com/account/apikeys) and [Pipeline](https://www.pipelinedeals.com/admin/api) keys to a .env file in the project's root folder:
+
+```ruby
+STRIPE_PUBLISHABLE_KEY=keygoeshere
+STRIPE_SECRET_KEY=keygoeshere
+PIPELINE_KEY=keygoeshere
+```
+
 Finally, start the rails server:
 
 ```console
