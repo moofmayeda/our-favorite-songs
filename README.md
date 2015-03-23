@@ -46,7 +46,7 @@ Finally, start the rails server:
 ```console
 $ rails s
 ```
-It should now be available at `localhost:3000`.
+It should now be available at `localhost:3000/admin`.
 
 ##Author
 [moof mayeda](https://github.com/moofmayeda)
