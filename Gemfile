@@ -12,7 +12,10 @@ gem "paperclip", "~> 4.2"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rest-client'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+group :development, :test do
+	gem 'dotenv-rails'
+	gem 'pry'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
